@@ -1,0 +1,8 @@
+{
+  "scene": "input/scene.tif",
+  "sr": "sr/scene_sr.tif",
+  "uncertainty": "uncertainty/scene_uncertainty.tif",
+  "original_ndvi": "ndvi/original_ndvi.tif",
+  "sr_ndvi": "ndvi/sr_ndvi.tif",
+  "metrics": "metrics/metrics.json"
+}

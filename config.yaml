@@ -1,0 +1,17 @@
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  models: "models"
+  demo_data: "demo_data"
+
+sentinel2:
+  red_band: "B4"
+  nir_band: "B8"
+
+demo_data_contract:
+  input: "input/scene.tif"
+  sr: "sr/scene_sr.tif"
+  uncertainty: "uncertainty/scene_uncertainty.tif"
+  original_ndvi: "ndvi/original_ndvi.tif"
+  sr_ndvi: "ndvi/sr_ndvi.tif"
+  metrics: "metrics/metrics.json"

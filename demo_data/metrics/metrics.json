@@ -1,0 +1,7 @@
+{
+  "psnr": 0.0,
+  "ssim": 0.0,
+  "rmse": 0.0,
+  "sam": 0.0,
+  "note": "Placeholder values from Phase 0. Not yet computed from real data."
+}
