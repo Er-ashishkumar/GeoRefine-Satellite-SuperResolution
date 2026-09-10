@@ -8,6 +8,19 @@ sentinel2:
   red_band: "B4"
   nir_band: "B8"
 
+dataset:
+  lr_subdir: "lr"
+  hr_subdir: "hr"
+  valid_extensions: [".tif", ".tiff"]
+  index_filename: "dataset_index.json"
+  # Fallback strategy used when no real, independently-sourced HR reference
+  # imagery is available for a scene. See data/README.md for details.
+  synthetic_hr_fallback:
+    enabled: true
+    method: "gaussian_blur_downsample"
+    blur_sigma: 1.0
+    downsample_factor: 4
+
 demo_data_contract:
   input: "input/scene.tif"
   sr: "sr/scene_sr.tif"
