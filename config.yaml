@@ -21,6 +21,12 @@ dataset:
     blur_sigma: 1.0
     downsample_factor: 4
 
+preprocessing:
+  output_index_filename: "preprocessing_index.json"
+  synthetic_output_subdir: "synthetic_lr"
+  min_overlap_fraction: 0.5
+  resolution_ratio_tolerance: 0.15
+
 demo_data_contract:
   input: "input/scene.tif"
   sr: "sr/scene_sr.tif"
