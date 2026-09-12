@@ -4,3 +4,5 @@ pyproj
 PyYAML
 pytest
 scipy
+torch
+torchvision
