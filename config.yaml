@@ -27,6 +27,13 @@ preprocessing:
   min_overlap_fraction: 0.5
   resolution_ratio_tolerance: 0.15
 
+patches:
+  size: 128
+  stride: 128
+  max_nodata_fraction: 0.1
+  output_subdir: "patches"
+  index_filename: "patches_index.json"
+
 demo_data_contract:
   input: "input/scene.tif"
   sr: "sr/scene_sr.tif"

@@ -60,3 +60,29 @@ It does not load pixel data, so it is safe and fast to re-run at any time.
 Later phases (preprocessing, patch generation) read this index instead of
 re-scanning the filesystem, so **do not hand-edit it** - re-run the script
 after adding or changing raw data.
+
+
+## Patch outputs (Phase 3)
+
+Run `python scripts/generate_patches.py` after both `build_dataset_index.py`
+(Phase 1) and `run_preprocessing.py` (Phase 2) have been run. This crops
+fixed-size LR/HR patch pairs from each scene's aligned or synthetic imagery
+and writes them to:
+
+    data/processed/patches/<scene_id>/patch_0000_lr.tif
+    data/processed/patches/<scene_id>/patch_0000_hr.tif
+    ...
+    data/processed/patches_index.json
+
+Patch size, stride, and the maximum allowed nodata fraction per patch are
+configured under `patches:` in `config.yaml`. The patch grid is deterministic
+(fixed stride, no randomness), and every patch file carries its own real CRS
+and geotransform derived from its source scene, so patches remain
+independently inspectable in GIS tools rather than being bare pixel arrays.
+
+For scenes using the synthetic HR fallback (see above), patches inherit that
+scene's `is_synthetic_hr: true` flag via `patches_index.json` - patch pairs
+from those scenes are never presented as pairing real ground truth.
+
+`patches_index.json` is the interface Phase 4 (model training) consumes; do
+not hand-edit it, re-run the script after regenerating upstream data.
